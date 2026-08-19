@@ -176,6 +176,55 @@ export const restaurants = [
     perfil: "Auténtica comida italiana y pastas artesanales. Local pequeño, exclusivo y atención personalizada.",
     coordenadas: { lat: 10.9965, lng: -63.7990 }
   },
+  // 🥘 DOWNTOWN PORLAMAR Y MERCADOS
+  {
+    id: "rest-mercado-conejero",
+    nombre: "Empanadas del Mercado de Conejero",
+    zona: "Centro-Sur",
+    municipio: "García",
+    estrellas: 4.9,
+    horario: "06:00 - 13:00",
+    costo_usd: 3,
+    comidas: ["Desayuno", "Empanadas", "Cazón"],
+    perfil: "El templo del desayuno margariteño. Famoso por sus empanadas de cazón, mariscos y jugos naturales. Imprescindible.",
+    coordenadas: { lat: 10.9592, lng: -63.8569 }
+  },
+  {
+    id: "rest-la-especial-porlamar",
+    nombre: "La Especial (Centro)",
+    zona: "Centro (Porlamar)",
+    municipio: "Mariño",
+    estrellas: 4.5,
+    horario: "07:00 - 19:00",
+    costo_usd: 8,
+    comidas: ["Desayuno", "Almuerzo", "Cafetería"],
+    perfil: "Un clásico del centro de Porlamar. Ideal para comer bien, rápido y tradicional en medio del ajetreo comercial.",
+    coordenadas: { lat: 10.9531, lng: -63.8375 }
+  },
+  {
+    id: "rest-el-rincon-del-pescador",
+    nombre: "El Rincón del Pescador",
+    zona: "Centro (Porlamar)",
+    municipio: "Mariño",
+    estrellas: 4.6,
+    horario: "11:00 - 17:00",
+    costo_usd: 15,
+    comidas: ["Mariscos", "Pescado Frito", "Almuerzo"],
+    perfil: "Ubicado cerca de los muelles pesqueros del centro. Pescado fresco del día garantizado, ambiente auténtico y sin pretensiones.",
+    coordenadas: { lat: 10.9490, lng: -63.8355 }
+  },
+  {
+    id: "rest-panaderia-las-caracolas",
+    nombre: "Panadería y Pastelería Las Caracolas",
+    zona: "Centro (Porlamar)",
+    municipio: "Mariño",
+    estrellas: 4.4,
+    horario: "06:30 - 20:00",
+    costo_usd: 5,
+    comidas: ["Desayuno", "Merienda", "Panadería"],
+    perfil: "Punto de encuentro céntrico para tomar café y probar dulces locales mientras caminas por el boulevard.",
+    coordenadas: { lat: 10.9525, lng: -63.8368 }
+  },
   {
     id: "rest-il-nonno",
     nombre: "Pizzería Il Nonno",
