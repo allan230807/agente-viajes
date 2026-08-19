@@ -22,7 +22,7 @@ export function calculateDistance(lat1: number, lon1: number, lat2: number, lon2
     Math.cos(lat1 * (Math.PI / 180)) * Math.cos(lat2 * (Math.PI / 180)) *
     Math.sin(dLon / 2) * Math.sin(dLon / 2);
   const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
-  return Number((R * c).toFixed(2)); // Retorna en km con 2 decimales
+  return Number((R * c).toFixed(2));
 }
 
 // Función para buscar y ordenar elementos por cercanía
