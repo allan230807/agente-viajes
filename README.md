@@ -1,36 +1,34 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🌊 Margarita AI 🏝️
 
-## Getting Started
+[![positivo para vibecoding](https://img.shields.io/badge/vibecoding-positivo-teal?style=for-the-badge&logo=google-gemini&logoColor=white)](https://github.com)
 
-First, run the development server:
+> Un experimento personal que combina el análisis cuantitativo de las Ciencias Actuariales con la pasión por el desarrollo de software y la programación.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+---
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 👨‍💻 Sobre el Proyecto
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Este proyecto nació como un espacio de experimentación y *vibecoding* desarrollado desde Venezuela. Como estudiante de Ciencias Actuariales en la Universidad Central de Venezuela (UCV), suelo explorar cómo la lógica analítica y la programación convergen en herramientas prácticas. 
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+**Margarita AI** es el resultado de eso: un asistente turístico inteligente para la Isla de Margarita que no solo ofrece recomendaciones basadas en presupuestos y ubicación GPS, sino que implementa una arquitectura resiliente con un sistema de respaldo automático de modelos de IA para evitar interrupciones por límites de frecuencia (`429`).
 
-## Learn More
+---
 
-To learn more about Next.js, take a look at the following resources:
+## ✨ Características Principales
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+* **💧 Interfaz Aguamarina Immersiva:** Diseño moderno estilo *Liquid Glass* con tonos turquesas, cian y efectos de brillo neón.
+* **🔄 Sistema de Respaldo Automático (Fallback):** Control inteligente de la API. Si el modelo principal experimenta alta demanda, el sistema realiza un *swap* transparente a modelos de respaldo (`gemini-3.5-flash` ➡️ `gemini-3.6-flash`).
+* **💬 Conversación Fluida y Directa:** Respuestas optimizadas para simular una charla natural, eliminando bloques de texto masivos y formatos complejos.
+* **🗺️ Datos Locales:** Integración de datasets propios sobre playas, restaurantes y actividades turísticas de la isla.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+---
 
-## Deploy on Vercel
+## 🛠️ Tecnologías Utilizadas
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+* **Framework:** [Next.js](https://nextjs.org/) (App Router)
+* **Lenguaje:** [TypeScript](https://www.typescriptlang.org/)
+* **Estilos:** [Tailwind CSS](https://tailwindcss.com/)
+* **Inteligencia Artificial:** [@google/genai](https://www.npmjs.com/package/@google/genai) (Google Gemini SDK)
+* **Animaciones:** [Anime.js](https://animejs.com/)r Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
