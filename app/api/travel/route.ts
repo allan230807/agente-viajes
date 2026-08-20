@@ -1,25 +1,50 @@
 import { NextResponse } from 'next/server';
-import { getTravelRecommendation } from '@/services/travel_agent';
+import { GoogleGenAI } from '@google/genai';
+
+const ai = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY });
 
 export async function POST(request: Request) {
   try {
-    const body = await request.json();
-    const { prompt, lat, lng } = body;
+    const { prompt, lat, lng, datasets, budget } = await request.json();
 
-    if (!prompt || lat === undefined || lng === undefined) {
-      return NextResponse.json(
-        { error: 'Faltan parámetros obligatorios (prompt, lat, lng)' },
-        { status: 400 }
-      );
-    }
+    const systemInstruction = `
+    Eres un asistente turístico humano, amigable y muy directo en la Isla de Margarita, Venezuela.
+    REGLAS ESTRICTAS DE ESTILO:
+    1. Escribe con total naturalidad, como si estuvieras chateando por WhatsApp o hablando cara a cara.
+    2. PROHIBIDO usar símbolos de formato Markdown como hashtags (#), asteriscos (*), negritas (**), ni guiones (-) para listas. Escribe únicamente en párrafos de texto fluido y conversacional.
+    3. Sé preciso, amable y ve al grano (evita dar bloques masivos de texto).
+    4. Al final de tu respuesta, termina obligatoriamente con una sola pregunta específica de seguimiento sobre el tema para mantener la charla fluida.
+    5. Presupuesto: Considera que el monto indicado es de ${budget || 500} dólares en total para un grupo de 4 personas. Adapta los planes, comidas o entradas a ese presupuesto basado en los datasets locales.
+    `;
 
-    const recommendation = await getTravelRecommendation(prompt, lat, lng);
+    const response = await ai.models.generateContent({
+      model: 'gemini-3.5-flash',
+      contents: [
+        {
+          role: 'user',
+          parts: [
+            { text: `Datasets locales: ${JSON.stringify(datasets || {})}` },
+            { text: `Ubicación: Lat ${lat}, Lng ${lng}` },
+            { text: `Presupuesto para 4 personas: ${budget} USD` },
+            { text: `Solicitud: ${prompt}` }
+          ]
+        }
+      ],
+      config: {
+        systemInstruction: systemInstruction,
+        temperature: 0.3,
+      },
+    });
 
-    return NextResponse.json({ success: true, data: recommendation });
-  } catch (error) {
-    console.error('Error en la API de viajes:', error);
+    return NextResponse.json({
+      success: true,
+      response: response.text || "¡Hola! ¿En qué te puedo ayudar hoy?",
+    });
+
+  } catch (error: any) {
+    console.error('Error en /api/travel:', error);
     return NextResponse.json(
-      { error: 'Error interno al procesar la recomendación' },
+      { success: false, error: error.message },
       { status: 500 }
     );
   }
